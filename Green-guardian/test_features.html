@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartHero - Feature Testing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-header {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .status.good { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .status.warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
+        .status.error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .debug-info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: monospace; }
+        button { background: #22c55e; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin: 5px; }
+        button:hover { background: #16a34a; }
+        .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0; }
+        .feature-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; }
+        #productTitle { font-size: 24px; color: #0066c0; margin: 10px 0; }
+        .a-price { font-size: 20px; color: #B12704; font-weight: bold; }
+        #centerCol, #dp-container { min-height: 20px; }
+    </style>
+</head>
+<body>
+    <div class="test-header">
+        <h1>🧪 CartHero Complete Feature Test</h1>
+        <p>This page will help you verify ALL features are working correctly</p>
+    </div>
+
+    <div class="test-section">
+        <h2>🔧 System Status Check</h2>
+        <div id="system-status">Checking...</div>
+        <button onclick="checkSystemStatus()">Recheck System</button>
+        <button onclick="forceReload()">Force Reload Extension</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Feature Checklist</h2>
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>🤖 AI Sustainability Score</h3>
+                <div id="ai-score-status">❓ Not checked</div>
+                <p>Should show: Circular score (0-100), confidence %, breakdown bars, AI insights</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔗 Real Alternative Links</h3>
+                <div id="alternatives-status">❓ Not checked</div>
+                <p>Should show: eBay, BackMarket, Facebook Marketplace working links</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌍 Carbon Footprint</h3>
+                <div id="carbon-status">❓ Not checked</div>
+                <p>Should show: New vs secondhand comparison, emissions breakdown</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Price Tracking</h3>
+                <div id="price-status">❓ Not checked</div>
+                <p>Should show: Price trend, history, "Track This Price" button</p>
+            </div>
+            <div class="feature-card">
+                <h3>🚨 Sustainability Alerts</h3>
+                <div id="alerts-status">❓ Not checked</div>
+                <p>Should show: Smart alerts, settings button, personalized tips</p>
+            </div>
+            <div class="feature-card">
+                <h3>👥 Community Impact</h3>
+                <div id="community-status">❓ Not checked</div>
+                <p>Should show: Global stats, personal ranking, share buttons</p>
+            </div>
+        </div>
+        <button onclick="runFeatureCheck()">Check All Features</button>
+    </div>
+
+    <!-- Mock Amazon Product Page Structure -->
+    <div class="test-section">
+        <h2>🛍️ Mock Product Page</h2>
+        <div id="dp-container">
+            <div id="centerCol">
+                <h1 id="productTitle">Apple iPhone 15 Pro - 256GB - Natural Titanium</h1>
+                <div class="a-price">$1,199.99</div>
+                <div id="brand" style="display: none;">Apple</div>
+                <div id="feature-bullets">
+                    <ul>
+                        <li>A17 Pro chip with advanced performance</li>
+                        <li>Pro camera system with 5x Telephoto</li>
+                        <li>Titanium design for durability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🎮 Interactive Test Actions</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+            <button onclick="testAlternativeClick()">🔗 Test eBay Link Click</button>
+            <button onclick="testPriceAlert()">💰 Test Price Alert Creation</button>
+            <button onclick="testEcoShipping()">🚚 Test Eco Shipping Selection</button>
+            <button onclick="testShareFeature()">📱 Test Social Sharing</button>
+            <button onclick="testSettingsModal()">⚙️ Test Settings Modal</button>
+            <button onclick="openGameDashboard()">🎮 Open Game Dashboard</button>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>🐛 Debug Information</h2>
+        <div id="debug-info" class="debug-info">Debug info will appear here...</div>
+        <button onclick="showDebugInfo()">Show Debug Info</button>
+        <button onclick="clearConsole()">Clear Console</button>
+    </div>
+
+    <script>
+        // System status check
+        function checkSystemStatus() {
+            const statusDiv = document.getElementById('system-status');
+            let html = '';
+
+            // Check backend
+            fetch('http://localhost:5001/api/health')
+                .then(r => r.json())
+                .then(data => {
+                    html += `<div class="status good">✅ Backend: Running (${data.status})</div>`;
+                    updateSystemStatus(html);
+                })
+                .catch(e => {
+                    html += `<div class="status error">❌ Backend: CORS/Connection Error</div>`;
+                    html += `<div class="status warning">⚠️ Try: 1) Restart backend 2) Open directly: <a href="http://localhost:5001/api/health" target="_blank">Test API</a></div>`;
+                    updateSystemStatus(html);
+                });
+
+            // Check extension
+            if (window.cartHero) {
+                html += `<div class="status good">✅ Extension: Loaded</div>`;
+            } else {
+                html += `<div class="status error">❌ Extension: Not found</div>`;
+                html += `<div class="status warning">⚠️ Make sure extension is loaded in chrome://extensions/</div>`;
+            }
+
+            // Check overlay
+            const overlay = document.getElementById('carthero-overlay');
+            if (overlay) {
+                html += `<div class="status good">✅ Overlay: Present</div>`;
+                const sections = overlay.querySelectorAll('.carthero-section');
+                html += `<div class="status good">📊 Sections found: ${sections.length}</div>`;
+            } else {
+                html += `<div class="status warning">⚠️ Overlay: Not found (may load shortly)</div>`;
+            }
+
+            updateSystemStatus(html);
+        }
+
+        function updateSystemStatus(html) {
+            document.getElementById('system-status').innerHTML = html;
+        }
+
+        // Feature checking
+        function runFeatureCheck() {
+            const features = [
+                { id: 'ai-score-status', selector: '#ai-sustainability', name: 'AI Score' },
+                { id: 'alternatives-status', selector: '#secondhand-options', name: 'Alternatives' },
+                { id: 'carbon-status', selector: '#carbon-footprint', name: 'Carbon Footprint' },
+                { id: 'price-status', selector: '#price-tracking', name: 'Price Tracking' },
+                { id: 'alerts-status', selector: '#sustainability-alerts', name: 'Alerts' },
+                { id: 'community-status', selector: '#social-impact', name: 'Community Impact' }
+            ];
+
+            features.forEach(feature => {
+                const element = document.querySelector(feature.selector);
+                const statusDiv = document.getElementById(feature.id);
+
+                if (element) {
+                    statusDiv.innerHTML = `<span style="color: green;">✅ Found</span>`;
+                } else {
+                    statusDiv.innerHTML = `<span style="color: red;">❌ Missing</span>`;
+                }
+            });
+        }
+
+        // Test actions
+        function testAlternativeClick() {
+            const ebayBtn = document.querySelector('[data-url*="ebay"]');
+            if (ebayBtn) {
+                ebayBtn.click();
+                showMessage('✅ eBay button clicked!');
+            } else {
+                showMessage('❌ eBay button not found');
+            }
+        }
+
+        function testPriceAlert() {
+            if (window.cartHero && window.cartHero.createPriceAlert) {
+                window.cartHero.createPriceAlert();
+                showMessage('✅ Price alert function called!');
+            } else {
+                showMessage('❌ Price alert function not available');
+            }
+        }
+
+        function testEcoShipping() {
+            const ecoOption = document.querySelector('input[value="norush"]');
+            if (ecoOption) {
+                ecoOption.checked = true;
+                ecoOption.dispatchEvent(new Event('change'));
+                showMessage('✅ Eco shipping selected!');
+            } else {
+                showMessage('❌ Eco shipping option not found');
+            }
+        }
+
+        function testShareFeature() {
+            if (window.cartHero && window.cartHero.shareAchievement) {
+                const mockData = {
+                    shareableStats: {
+                        achievement: "🌱 Tested sustainable features",
+                        impact: "Saved 5.0kg CO₂",
+                        hashtags: ["#CartHero", "#Testing"]
+                    }
+                };
+                window.cartHero.shareAchievement(mockData);
+                showMessage('✅ Share function called!');
+            } else {
+                showMessage('❌ Share function not available');
+            }
+        }
+
+        function testSettingsModal() {
+            if (window.cartHero && window.cartHero.showAlertSettings) {
+                window.cartHero.showAlertSettings();
+                showMessage('✅ Settings modal opened!');
+            } else {
+                showMessage('❌ Settings function not available');
+            }
+        }
+
+        function openGameDashboard() {
+            chrome.action.openPopup();
+            showMessage('✅ Attempting to open extension popup');
+        }
+
+        function showDebugInfo() {
+            const debugDiv = document.getElementById('debug-info');
+            const overlay = document.getElementById('carthero-overlay');
+
+            let info = `
+=== EXTENSION DEBUG INFO ===
+Window.cartHero: ${!!window.cartHero}
+Overlay present: ${!!overlay}
+Current URL: ${window.location.href}
+Product title: ${document.getElementById('productTitle')?.textContent}
+Extension popup: ${!!chrome?.action}
+
+=== OVERLAY SECTIONS ===
+`;
+
+            if (overlay) {
+                const sections = overlay.querySelectorAll('.carthero-section');
+                sections.forEach((section, i) => {
+                    info += `${i + 1}. ${section.id || 'no-id'}: ${section.querySelector('h4')?.textContent}\n`;
+                });
+            } else {
+                info += "No overlay found\n";
+            }
+
+            info += `
+=== CONSOLE LOGS ===
+Check browser console (F12) for detailed logs
+`;
+
+            debugDiv.textContent = info;
+        }
+
+        function forceReload() {
+            if (window.cartHero) {
+                window.location.reload();
+            } else {
+                showMessage('❌ Extension not loaded - reload page manually');
+            }
+        }
+
+        function clearConsole() {
+            console.clear();
+            showMessage('✅ Console cleared');
+        }
+
+        function showMessage(msg) {
+            const div = document.createElement('div');
+            div.style.cssText = `
+                position: fixed; top: 20px; right: 20px; z-index: 10000;
+                background: #22c55e; color: white; padding: 15px 20px;
+                border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            `;
+            div.textContent = msg;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
+        }
+
+        // Auto-run checks on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                checkSystemStatus();
+                runFeatureCheck();
+                showDebugInfo();
+            }, 2000);
+        });
+
+        // Monitor for overlay injection
+        const observer = new MutationObserver(() => {
+            if (document.getElementById('carthero-overlay')) {
+                runFeatureCheck();
+                console.log('CartHero overlay detected by observer');
+            }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        console.log('🧪 CartHero test page loaded');
+        console.log('🔍 Monitoring for extension injection...');
+    </script>
+</body>
+</html>

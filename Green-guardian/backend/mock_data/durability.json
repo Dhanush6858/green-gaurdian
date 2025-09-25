@@ -1,0 +1,123 @@
+{
+  "smartphone": {
+    "iPhone 13": {
+      "repairabilityScore": 6,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "3-4 years",
+      "repairGuides": 15,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$150",
+      "commonIssues": ["Screen damage", "Battery degradation", "Camera malfunction"],
+      "sustainabilityTips": [
+        "Use protective case and screen protector",
+        "Avoid extreme temperatures",
+        "Regular software updates extend lifespan"
+      ]
+    },
+    "Samsung Galaxy S21": {
+      "repairabilityScore": 7,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "3-4 years",
+      "repairGuides": 12,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$120"
+    }
+  },
+  "laptop": {
+    "MacBook Air M1": {
+      "repairabilityScore": 4,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "5-7 years",
+      "repairGuides": 8,
+      "partAvailability": "Limited",
+      "repairCostEstimate": "$300",
+      "sustainabilityTips": [
+        "Regular cleaning prevents overheating",
+        "Use laptop stand for better ventilation",
+        "Consider external storage instead of upgrading"
+      ]
+    },
+    "ThinkPad X1 Carbon": {
+      "repairabilityScore": 8,
+      "maxScore": 10,
+      "warrantyLength": "36 months",
+      "expectedLifespan": "6-8 years",
+      "repairGuides": 20,
+      "partAvailability": "Excellent",
+      "repairCostEstimate": "$200"
+    }
+  },
+  "headphones": {
+    "Sony WH-1000XM4": {
+      "repairabilityScore": 8,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "5-7 years",
+      "repairGuides": 6,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$50",
+      "sustainabilityTips": [
+        "Store in protective case when not in use",
+        "Avoid dropping or excessive pressure",
+        "Replace ear pads when worn instead of entire unit"
+      ]
+    }
+  },
+  "tablet": {
+    "iPad Air": {
+      "repairabilityScore": 5,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "4-6 years",
+      "repairGuides": 10,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$180"
+    }
+  },
+  "gaming": {
+    "Nintendo Switch": {
+      "repairabilityScore": 7,
+      "maxScore": 10,
+      "warrantyLength": "12 months",
+      "expectedLifespan": "5-8 years",
+      "repairGuides": 18,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$100",
+      "sustainabilityTips": [
+        "Use screen protector to prevent scratches",
+        "Avoid playing while charging to prevent overheating",
+        "Regular cleaning of fan vents"
+      ]
+    }
+  },
+  "camera": {
+    "Canon EOS R5": {
+      "repairabilityScore": 6,
+      "maxScore": 10,
+      "warrantyLength": "24 months",
+      "expectedLifespan": "8-12 years",
+      "repairGuides": 12,
+      "partAvailability": "Good",
+      "repairCostEstimate": "$250"
+    }
+  },
+  "appliance": {
+    "KitchenAid Stand Mixer": {
+      "repairabilityScore": 9,
+      "maxScore": 10,
+      "warrantyLength": "60 months",
+      "expectedLifespan": "15-20 years",
+      "repairGuides": 25,
+      "partAvailability": "Excellent",
+      "repairCostEstimate": "$75",
+      "sustainabilityTips": [
+        "Regular lubrication extends motor life",
+        "Clean thoroughly after each use",
+        "Use appropriate attachments to prevent wear"
+      ]
+    }
+  }
+}

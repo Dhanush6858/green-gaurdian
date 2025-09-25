@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "CartHero - Sustainable Shopping Assistant",
+  "version": "1.0.0",
+  "description": "Transform online shopping into sustainable choices with secondhand alternatives, durability insights, and carbon-aware delivery options.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://amazon.com/*",
+    "*://amazon.co.uk/*",
+    "*://amazon.ca/*",
+    "*://amazon.de/*",
+    "*://amazon.fr/*",
+    "*://amazon.it/*",
+    "*://amazon.es/*",
+    "*://amazon.com.au/*",
+    "*://amazon.in/*",
+    "*://amazon.co.jp/*",
+    "*://amazon.com.br/*",
+    "*://amazon.com.mx/*",
+    "*://ebay.com/*",
+    "*://ebay.co.uk/*",
+    "*://ebay.de/*",
+    "*://backmarket.com/*",
+    "*://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["user-system.js", "gamification.js", "content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CartHero Dashboard"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["overlay.html", "assets/*"],
+      "matches": ["*://amazon.com/*", "*://amazon.co.uk/*", "*://amazon.ca/*", "*://amazon.de/*", "*://amazon.fr/*", "*://amazon.it/*", "*://amazon.es/*", "*://amazon.com.au/*", "*://amazon.in/*", "*://amazon.co.jp/*", "*://amazon.com.br/*", "*://amazon.com.mx/*"]
+    }
+  ]
+}

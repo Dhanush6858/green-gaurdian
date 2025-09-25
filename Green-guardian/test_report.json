@@ -1,0 +1,124 @@
+{
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "results": [
+    {
+      "test": "API Health Check",
+      "status": "[PASS]",
+      "details": "Services: {'durability_analysis': 'operational', 'emissions_calculator': 'operational', 'price_tracking': 'operational', 'secondhand_search': 'operational', 'sustainability_alerts': 'operational'}",
+      "timestamp": "2025-09-23T14:48:45.885448"
+    },
+    {
+      "test": "Sustainability API - iPhone 15 Pro",
+      "status": "[PASS]",
+      "details": "Sections: 8/8",
+      "timestamp": "2025-09-23T14:48:58.590769"
+    },
+    {
+      "test": "Sustainability API - MacBook Pro",
+      "status": "[PASS]",
+      "details": "Sections: 8/8",
+      "timestamp": "2025-09-23T14:49:11.257577"
+    },
+    {
+      "test": "Sustainability API - Sony Camera",
+      "status": "[PASS]",
+      "details": "Sections: 8/8",
+      "timestamp": "2025-09-23T14:49:23.940896"
+    },
+    {
+      "test": "eBay Integration",
+      "status": "[PASS]",
+      "details": "Found 0 real eBay items, 3 total",
+      "timestamp": "2025-09-23T14:49:36.522309"
+    },
+    {
+      "test": "Enhanced Carbon Calculations",
+      "status": "[PASS]",
+      "details": "Methodology: True, Enhanced comparisons: True, Realistic savings: True",
+      "timestamp": "2025-09-23T14:49:49.253998"
+    },
+    {
+      "test": "International Support - UK",
+      "status": "[PASS]",
+      "details": "Shipping options: ['express', 'noRush', 'pickup', 'standard']",
+      "timestamp": "2025-09-23T14:50:01.882968"
+    },
+    {
+      "test": "International Support - DE",
+      "status": "[PASS]",
+      "details": "Shipping options: ['express', 'noRush', 'pickup', 'standard']",
+      "timestamp": "2025-09-23T14:50:14.542306"
+    },
+    {
+      "test": "International Support - CA",
+      "status": "[PASS]",
+      "details": "Shipping options: ['express', 'noRush', 'pickup', 'standard']",
+      "timestamp": "2025-09-23T14:50:27.228810"
+    },
+    {
+      "test": "International Support - AU",
+      "status": "[PASS]",
+      "details": "Shipping options: ['express', 'noRush', 'pickup', 'standard']",
+      "timestamp": "2025-09-23T14:50:39.869269"
+    },
+    {
+      "test": "Extension File - manifest.json",
+      "status": "[PASS]",
+      "details": "Size: 1506 bytes",
+      "timestamp": "2025-09-23T14:50:39.871730"
+    },
+    {
+      "test": "Extension File - content.js",
+      "status": "[PASS]",
+      "details": "Size: 60377 bytes",
+      "timestamp": "2025-09-23T14:50:39.872603"
+    },
+    {
+      "test": "Extension File - user-system.js",
+      "status": "[PASS]",
+      "details": "Size: 11172 bytes",
+      "timestamp": "2025-09-23T14:50:39.873223"
+    },
+    {
+      "test": "Extension File - gamification.js",
+      "status": "[PASS]",
+      "details": "Size: 15130 bytes",
+      "timestamp": "2025-09-23T14:50:39.874215"
+    },
+    {
+      "test": "Extension File - popup.html",
+      "status": "[PASS]",
+      "details": "Size: 14333 bytes",
+      "timestamp": "2025-09-23T14:50:39.874830"
+    },
+    {
+      "test": "Extension File - popup.js",
+      "status": "[PASS]",
+      "details": "Size: 25830 bytes",
+      "timestamp": "2025-09-23T14:50:39.875654"
+    },
+    {
+      "test": "Extension File - overlay.css",
+      "status": "[PASS]",
+      "details": "Size: 24396 bytes",
+      "timestamp": "2025-09-23T14:50:39.876658"
+    },
+    {
+      "test": "Extension File - background.js",
+      "status": "[PASS]",
+      "details": "Size: 11252 bytes",
+      "timestamp": "2025-09-23T14:50:39.877553"
+    },
+    {
+      "test": "User System Structure",
+      "status": "[PASS]",
+      "details": "All methods present",
+      "timestamp": "2025-09-23T14:50:39.880556"
+    }
+  ]
+}

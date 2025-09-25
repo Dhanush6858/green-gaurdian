@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartHero Test Page - Mock Amazon Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .product-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        #productTitle {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0066c0;
+            margin-bottom: 10px;
+        }
+        .a-price {
+            font-size: 28px;
+            color: #B12704;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-details {
+            margin: 20px 0;
+        }
+        .test-instructions {
+            background: #e8f4f8;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .feature-test {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        #centerCol, #rightCol, #dp-container {
+            /* These IDs help CartHero detect this as a product page */
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-instructions">
+        <h2>🧪 CartHero Extension Test Page</h2>
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Make sure your backend is running on <code>http://localhost:5001</code></li>
+            <li>Load the CartHero extension in Chrome</li>
+            <li>This page should trigger CartHero overlay automatically</li>
+            <li>If not visible, check browser console (F12) for errors</li>
+        </ol>
+    </div>
+
+    <div class="product-container">
+        <div id="dp-container">
+            <div id="centerCol">
+                <h1 id="productTitle">Apple iPhone 15 Pro Max - 256GB - Natural Titanium</h1>
+
+                <div class="a-price">
+                    <span class="a-price-whole">1,199</span>
+                    <span class="a-price-fraction">99</span>
+                </div>
+
+                <div class="product-details">
+                    <p><strong>Brand:</strong> <span id="brand">Apple</span></p>
+                    <p><strong>Model:</strong> iPhone 15 Pro Max</p>
+                    <p><strong>Storage:</strong> 256GB</p>
+                    <p><strong>Color:</strong> Natural Titanium</p>
+
+                    <div id="feature-bullets">
+                        <h3>Key Features:</h3>
+                        <ul>
+                            <li>6.7-inch Super Retina XDR display</li>
+                            <li>A17 Pro chip with 6-core GPU</li>
+                            <li>Pro camera system with 5x Telephoto</li>
+                            <li>Titanium design</li>
+                            <li>USB-C connector</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-test">
+                    <h3>🌱 CartHero Features to Test:</h3>
+                    <ul>
+                        <li><strong>AI Sustainability Score:</strong> Should show 0-100 score with breakdown</li>
+                        <li><strong>Real Alternative Links:</strong> eBay, BackMarket, Facebook Marketplace</li>
+                        <li><strong>Price Tracking:</strong> 30-day history, trend analysis, alert creation</li>
+                        <li><strong>Sustainability Alerts:</strong> Phone-specific recommendations</li>
+                        <li><strong>Carbon Footprint:</strong> Manufacturing vs secondhand comparison</li>
+                        <li><strong>Social Impact:</strong> Community stats and sharing</li>
+                        <li><strong>Gamification:</strong> XP gains, level progression in popup</li>
+                    </ul>
+                </div>
+
+                <div class="feature-test">
+                    <h3>🎮 Interactive Testing:</h3>
+                    <p><strong>To earn XP and test gamification:</strong></p>
+                    <ol>
+                        <li>Click any "View on eBay" button (+25 XP)</li>
+                        <li>Select "No Rush Delivery" shipping (+15 XP)</li>
+                        <li>Open extension popup to see progress</li>
+                        <li>Create a price alert</li>
+                        <li>Try sharing an achievement</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <h2>Alternative Test Products</h2>
+        <p>Change the product title and price to test different categories:</p>
+
+        <button onclick="changeProduct('laptop')">Test Laptop</button>
+        <button onclick="changeProduct('headphones')">Test Headphones</button>
+        <button onclick="changeProduct('smartwatch')">Test Smartwatch</button>
+        <button onclick="changeProduct('gaming')">Test Gaming Console</button>
+    </div>
+
+    <script>
+        // Function to test different product categories
+        function changeProduct(category) {
+            const products = {
+                laptop: {
+                    title: "MacBook Pro 14-inch - M3 Pro chip - 18GB RAM - 512GB SSD",
+                    price: "2,399.00",
+                    brand: "Apple"
+                },
+                headphones: {
+                    title: "Sony WH-1000XM5 Wireless Noise Canceling Headphones",
+                    price: "349.99",
+                    brand: "Sony"
+                },
+                smartwatch: {
+                    title: "Apple Watch Series 9 GPS + Cellular 45mm",
+                    price: "529.00",
+                    brand: "Apple"
+                },
+                gaming: {
+                    title: "PlayStation 5 Console (PS5) - Standard Edition",
+                    price: "499.99",
+                    brand: "Sony"
+                }
+            };
+
+            const product = products[category];
+            if (product) {
+                document.getElementById('productTitle').textContent = product.title;
+                document.querySelector('.a-price-whole').textContent = product.price.split('.')[0];
+                document.querySelector('.a-price-fraction').textContent = product.price.split('.')[1] || '00';
+                document.getElementById('brand').textContent = product.brand;
+
+                // Trigger a page "change" event to potentially reload CartHero
+                console.log(`Changed to ${category} product:`, product);
+                alert(`Product changed to: ${product.title}\n\nReload the page to see CartHero analyze the new product.`);
+            }
+        }
+
+        // Add some debugging info
+        console.log('CartHero Test Page Loaded');
+        console.log('Current URL:', window.location.href);
+        console.log('Product Title:', document.getElementById('productTitle')?.textContent);
+        console.log('Price:', document.querySelector('.a-price')?.textContent);
+
+        // Check if CartHero extension is loaded
+        setTimeout(() => {
+            const cartHeroOverlay = document.getElementById('carthero-overlay');
+            if (cartHeroOverlay) {
+                console.log('✅ CartHero overlay detected!');
+            } else {
+                console.log('⚠️ CartHero overlay not found. Check:');
+                console.log('1. Extension is loaded and enabled');
+                console.log('2. Backend server is running on localhost:5001');
+                console.log('3. No JavaScript errors in console');
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

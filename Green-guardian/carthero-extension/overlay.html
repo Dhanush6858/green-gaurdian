@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartHero Overlay</title>
+    <link rel="stylesheet" href="overlay.css">
+</head>
+<body>
+    <div class="carthero-overlay" id="carthero-overlay">
+        <div class="carthero-header">
+            <div class="carthero-logo">
+                <span class="carthero-icon">🌱</span>
+                <div class="carthero-title-section">
+                    <h3>CartHero - Sustainable Alternatives</h3>
+                </div>
+            </div>
+            <div class="carthero-actions">
+                <button class="carthero-close" id="carthero-close">×</button>
+            </div>
+        </div>
+
+        <div class="carthero-content">
+            <div class="carthero-section">
+                <h4>🔄 Secondhand Options</h4>
+                <div id="secondhand-container">
+                    <p class="no-options">Loading sustainable alternatives...</p>
+                </div>
+            </div>
+
+            <div class="carthero-section">
+                <h4>🔧 Durability Insights</h4>
+                <div id="durability-container">
+                    <div class="durability-info">
+                        <div class="durability-score">
+                            <span class="score">-</span>
+                            <span class="score-label">Repairability Score</span>
+                        </div>
+                        <div class="durability-details">
+                            <p><strong>Warranty:</strong> Loading...</p>
+                            <p><strong>Expected Lifespan:</strong> Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carthero-section">
+                <h4>🚚 Carbon-Aware Shipping</h4>
+                <div id="shipping-container">
+                    <div class="shipping-options">
+                        <div class="shipping-option">
+                            <div class="option-left">
+                                <span class="shipping-type">Loading shipping options...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carthero-stats">
+                <div class="stat">
+                    <span class="stat-value" id="co2-saved">0</span>
+                    <span class="stat-label">kg CO₂ saved</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="items-reused">0</span>
+                    <span class="stat-label">items reused</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

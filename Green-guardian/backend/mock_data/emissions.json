@@ -1,0 +1,122 @@
+{
+  "shipping_multipliers": {
+    "express": 3.5,
+    "standard": 2.0,
+    "no_rush": 1.0,
+    "pickup": 0.0
+  },
+  "base_emissions_by_category": {
+    "smartphone": 1.2,
+    "laptop": 2.8,
+    "tablet": 1.8,
+    "headphones": 0.8,
+    "smartwatch": 0.6,
+    "gaming": 3.2,
+    "camera": 2.1,
+    "appliance": 5.5,
+    "electronics": 1.5
+  },
+  "base_emissions_by_weight": {
+    "0-0.5kg": 0.8,
+    "0.5-1kg": 1.2,
+    "1-2kg": 1.8,
+    "2-5kg": 2.5,
+    "5-10kg": 4.0,
+    "10kg+": 6.0
+  },
+  "shipping_distances": {
+    "local": {
+      "description": "Within 50 miles",
+      "multiplier": 0.5
+    },
+    "regional": {
+      "description": "50-200 miles",
+      "multiplier": 1.0
+    },
+    "national": {
+      "description": "200-1000 miles",
+      "multiplier": 1.5
+    },
+    "international": {
+      "description": "Over 1000 miles",
+      "multiplier": 3.0
+    }
+  },
+  "packaging_emissions": {
+    "minimal": 0.1,
+    "standard": 0.3,
+    "premium": 0.5,
+    "excessive": 0.8
+  },
+  "carrier_efficiency": {
+    "ups": {
+      "efficiency_score": 8.2,
+      "carbon_neutral_program": true
+    },
+    "fedex": {
+      "efficiency_score": 7.8,
+      "carbon_neutral_program": true
+    },
+    "usps": {
+      "efficiency_score": 7.5,
+      "carbon_neutral_program": false
+    },
+    "dhl": {
+      "efficiency_score": 8.0,
+      "carbon_neutral_program": true
+    },
+    "amazon": {
+      "efficiency_score": 7.2,
+      "carbon_neutral_program": true
+    }
+  },
+  "seasonal_adjustments": {
+    "peak_holiday": 1.3,
+    "normal": 1.0,
+    "low_season": 0.9
+  },
+  "eco_shipping_options": {
+    "carbon_neutral": {
+      "description": "Offset through verified carbon credits",
+      "additional_cost": "$1.50",
+      "co2_reduction": "100%"
+    },
+    "consolidated": {
+      "description": "Combined with other deliveries",
+      "additional_cost": "$0.00",
+      "co2_reduction": "40%"
+    },
+    "ground_only": {
+      "description": "No air transport",
+      "additional_cost": "$0.00",
+      "co2_reduction": "60%"
+    },
+    "pickup_point": {
+      "description": "Delivery to nearby pickup location",
+      "additional_cost": "$0.00",
+      "co2_reduction": "25%"
+    }
+  },
+  "sample_calculations": {
+    "iphone_express": {
+      "product": "iPhone 13 Pro",
+      "category": "smartphone",
+      "weight": "0.24kg",
+      "distance": "regional",
+      "shipping_type": "express",
+      "base_emissions": 1.2,
+      "total_emissions": 4.2,
+      "calculation": "1.2 (base) × 3.5 (express) × 1.0 (regional)"
+    },
+    "laptop_standard": {
+      "product": "MacBook Air",
+      "category": "laptop",
+      "weight": "1.29kg",
+      "distance": "national",
+      "shipping_type": "standard",
+      "base_emissions": 2.8,
+      "total_emissions": 8.4,
+      "calculation": "2.8 (base) × 2.0 (standard) × 1.5 (national)"
+    }
+  }
+}
